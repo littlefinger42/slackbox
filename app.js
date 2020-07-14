@@ -6,9 +6,9 @@ var SpotifyWebApi = require('spotify-web-api-node');
 dotenv.config();
 
 var spotifyApi = new SpotifyWebApi({
-  clientId     : process.env.SPOTIFY_KEY,
-  clientSecret : process.env.SPOTIFY_SECRET,
-  redirectUri  : process.env.SPOTIFY_REDIRECT_URI
+  clientId: process.env.SPOTIFY_KEY,
+  clientSecret: process.env.SPOTIFY_SECRET,
+  redirectUri: process.env.SPOTIFY_REDIRECT_URI
 });
 
 function slack(res, message) {
@@ -33,7 +33,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/authorise', function(req, res) {
-  var scopes = ['playlist-modify-public', 'playlist-modify-private'];
+  var scopes = ['user-read-currently-playing'];
   var state  = new Date().getTime();
   var authoriseURL = spotifyApi.createAuthorizeURL(scopes, state);
   res.redirect(authoriseURL);
