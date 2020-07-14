@@ -3,7 +3,7 @@ var bodyParser    = require('body-parser');
 var dotenv        = require('dotenv');
 var SpotifyWebApi = require('spotify-web-api-node');
 
-dotenv.load();
+dotenv.config();
 
 var spotifyApi = new SpotifyWebApi({
   clientId     : process.env.SPOTIFY_KEY,
