@@ -1,6 +1,5 @@
 var express       = require('express');
 var bodyParser    = require('body-parser');
-var request       = require('request');
 var dotenv        = require('dotenv');
 var SpotifyWebApi = require('spotify-web-api-node');
 
